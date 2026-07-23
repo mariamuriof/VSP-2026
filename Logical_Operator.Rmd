@@ -1,0 +1,151 @@
+---
+title: "Logical_Operator"
+output: html_document
+---
+
+How many patients are younger than 40
+``` {r}
+sum(age < 40)
+
+```
+How many patients are older than 25, and have an FEV1 between 40 and 70 (inclusive) 
+``` {r}
+age_logical <- age > 25
+fev_logical <- (fev1 >= 40) & (fev1 <= 70)
+sum(age_logical & fev_logical) 
+
+```
+How many patients have an even age (divisible by 2) and an odd fev1? 
+``` {r}
+sum((fev1 %% 2 == 1) & (age %% 2 == 0))
+
+```
+``` {r}
+reduced_lungfunction <- fev1 < 70 
+
+print(reduced_lungfunction)
+
+names(fev1)[reduced_lungfunction
+            ]
+
+```
+
+If statements
+``` {r}
+
+
+```
+
+Else Statments 
+``` {r}
+
+
+
+```
+
+Else-if Statements
+``` {r}
+
+
+```
+
+Else-if Practice 
+"Healthy" if FEV1 is greater than 80 
+"Moderate impairment" if FEV1 between 60 and 80 
+"Poor" if FEV1 is between 40 and 60 
+"Very poor" if FEV1 is less than 40
+``` {r}
+patient_2_fev1 <- fev1["Patient_02"]
+
+if (patient_2_fev1 < 80) {
+  print("Healthy")
+} else {
+  print("Unhealthy")
+} else if (patient_2_fev1 > 60) {
+  print("Moderarte Impairment")
+} else if (patient_2_fev1 > 40) {
+  print("Poor")
+} else 
+  print("Very poor")
+}
+
+
+```
+``` {r}
+for (patient in fev1) {
+  if (patient > 80) {
+    print("Healthy")
+  } else if (patient > 40) {
+    print("Poor")
+  } else {
+    print("Very Poor")
+  }
+}
+
+  
+
+```
+Paste 
+Now modify the loop to print something like:Patient_01: HealthyPatient_02: Moderate
+``` {r}
+
+
+patient_2_fev1 <- fev1["Patient_01"]
+patient_2_fev1 <- fev1["Patient_02"]
+  
+for (patient_id in names (fev1)) {
+
+  if (fev1[patient_id] > 80) {
+    print(paste0(patient_id, " : Healthy"))
+  } else if (fev1[patient_id] > 60) {
+    print(paste0(patient_id, " : Moderate impairment"))
+  } else if (fev1[patient_id] > 40) {
+    print(paste0(patient_id, " : Poor"))
+  } else {
+    print(paste0(patient_id," : Very poor"))
+  }
+}
+
+
+
+
+```
+Write a for loop that prints every age
+``` {r}
+
+for (patient_age in age) {
+  print(patient_age)
+}
+
+```
+Modify the for loop to print the patient id and age 
+``` {r}
+for (patient_age in names(age)) {
+  print(paste(patient_age,age[patient_age]))
+}
+
+```
+``` {r}
+total_age <- 0
+
+for (id in names(age)) {
+  total_age <- total_age + age[id]
+  
+  print(paste(id, " FEV:", fev1[id], " Age:", age[id]))
+  
+  if (total_age >= 800) {
+    break
+  }
+}
+
+
+```
+
+
+
+``` {r}
+over_30_vec <- c()
+
+for 
+
+```

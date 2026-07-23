@@ -1,0 +1,17 @@
+---
+title: "First_Markdown"
+output: html_document
+---
+
+``` {r} 
+x <- 11
+rm(list = ls())
+x <- 20
+y <- "yellow"
+
+numbers <- c(22, 87, 1, 3)
+
+
+
+
+```
