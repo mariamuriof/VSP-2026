@@ -31,7 +31,7 @@ amrit <- 80
 sam <- 90
 
 # Calculate the average grade
-avg <- mean(c(80, 90))
+avg <- mean(c(amrit, sam))
 
 print(paste0("Amrit's grade is ", amrit, " % "))
 print(paste0("Sam's grade is ", sam, " % "))
@@ -115,8 +115,8 @@ Example output:
 ```
 
 ```{r question-5}
-for (student in names(scores)) {
-  print(student)
+for (score in scores) {
+  print(score)
 }
 
 ```
@@ -143,8 +143,8 @@ Fail
 ```
 
 ```{r question-6}
-for (student in scores) {
-  if (student >= 50) {
+for (score in scores) {
+  if (score >= 50) {
     print("Pass")
   } else {
     print("Fail")
@@ -171,7 +171,7 @@ Emma: Fail
 
 ```{r question-7}
 for (student in names(scores)) {
-  if (scores[student] > 50) {
+  if (scores[student] >= 50) {
     print(paste0(student, ": Pass"))
   } else {
     print(paste0(student, ": Fail"))
@@ -200,13 +200,24 @@ Emma: 42 (Fail)
 
 ```{r bonus-question}
 
-# total_age <- 0 
-# 
-# for (student in names(scores)) { 
-#   if (student >= 50) {
-#     print(paste0(names(scores)) }}
-# 
-# total_age <- total_age + scores 
+total_score <- 0
+
+for (student in names(scores)) {
+
+  if (scores[student] >= 50) {
+    print(paste0(student, ": ", scores[student], " (Pass)"))
+  } else {
+    print(paste0(student, ": ", scores[student], " (Fail)"))
+  }
+
+  total_score <- total_score + scores[student]
+
+  if (total_score > 350) {
+    break
+  }
+
+}
+
 #      
  
 
