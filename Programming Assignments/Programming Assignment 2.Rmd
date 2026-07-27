@@ -8,7 +8,7 @@ Complete all questions by filling in the code chunks.
 This assessment will test your ability to work with `dplyr` for data manipulation and `ggplot2` for plotting.
 
 ```{r setp, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 ```
 
 ---
@@ -75,7 +75,7 @@ Calculate the **average Sepal.Length** for each species.
 
 ```{r question-4}
 flowers %>%
-  group_by(Sepal.Length) %>%
+  group_by(Species) %>%
   summarise(
     MeanSepalLength = mean(Sepal.Length, na.rm = TRUE)
   )

@@ -621,24 +621,16 @@ than or equal to 5</strong></li>
 <p>Calculate the <strong>average Sepal.Length</strong> for each
 species.</p>
 <pre class="r"><code>flowers %&gt;%
-  group_by(Sepal.Length) %&gt;%
+  group_by(Species) %&gt;%
   summarise(
     MeanSepalLength = mean(Sepal.Length, na.rm = TRUE)
   )</code></pre>
-<pre><code>## # A tibble: 35 × 2
-##    Sepal.Length MeanSepalLength
-##           &lt;dbl&gt;           &lt;dbl&gt;
-##  1          4.3             4.3
-##  2          4.4             4.4
-##  3          4.5             4.5
-##  4          4.6             4.6
-##  5          4.7             4.7
-##  6          4.8             4.8
-##  7          4.9             4.9
-##  8          5               5  
-##  9          5.1             5.1
-## 10          5.2             5.2
-## # ℹ 25 more rows</code></pre>
+<pre><code>## # A tibble: 3 × 2
+##   Species    MeanSepalLength
+##   &lt;fct&gt;                &lt;dbl&gt;
+## 1 setosa                5.01
+## 2 versicolor            5.94
+## 3 virginica             6.59</code></pre>
 <hr />
 </div>
 <div id="question-5-3-points" class="section level1">
