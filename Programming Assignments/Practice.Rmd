@@ -1,0 +1,792 @@
+---
+title: "Practice"
+output: html_document
+---
+
+```{r}
+amrit <- 80 
+sam <- 90
+
+average <- mean(c(amrit, sam))
+print(amrit) 
+print(sam)
+print(mean(c(amrit,sam)))
+print <- (average)
+
+```
+A teacher recorded the marks of three students.
+Emma scored 72
+Jack scored 85
+Olivia scored 91
+Your tasks
+Create variables called emma, jack, and olivia.
+Create a new variable called scores that stores all three marks.
+Create a variable called average that stores the average score.
+Print:
+emma
+scores
+average
+```{r}
+emma <- 72
+jack <- 85
+olivia <- 91
+
+scores <- c(emma,jack,olivia)
+average <- mean(scores)
+print(emma)
+print(scores)
+print(average)
+
+
+
+```
+
+``` {r}
+
+name <- "maria"
+university <- "university of glasgow" 
+degree <- "biochemistry" 
+
+student_info <- c(name,university,degree)
+print(name)
+print(student_info)
+
+message <- "Welcome to R"
+print(message)
+
+```
+```{r}
+
+animals <- c("lion","zebra","elephant")
+print(animals[2])
+
+```
+A coffee shop sold the following number of drinks today:
+Monday: 35
+Tuesday: 42
+Wednesday: 38
+Thursday: 47
+Your tasks
+1. Create four variables:
+monday
+tuesday
+wednesday
+thursday
+```{r}
+monday <- 35
+tuesday <- 42
+wednesday <- 38
+thursday <- 47
+
+sales <- c(monday,tuesday,wednesday,thursday)
+
+average_sales <- mean(sales)
+print(sales)
+print(average_sales)
+print(sales[3])
+
+sum(sales)
+print(sum(sales))
+```
+This is something you'll use all the time.
+Question 4
+A shop sold:
+Apples = 12
+Bananas = 18
+Oranges = 15
+Your tasks
+Create the three variables.
+Create a vector called fruit_sales.
+Print the vector.
+The shop sold 5 more apples. Update the variable apples.
+Recreate the fruit_sales vector so it uses the updated value.
+Print the updated vector.
+Print the new total sales.
+```{r}
+apples <- 12
+bananas <- 18
+oranges <- 15
+
+apples <- apples + 5
+
+fruit_sales <- c(apples,bananas,oranges)
+
+
+print(fruit_sales)
+
+
+
+
+```
+A teacher recorded the following test scores:
+Alice = 78
+Ben = 65
+Chloe = 91
+David = 84
+Emma = 73
+Your tasks
+Create a variable for each student.
+Create a vector called:
+scores
+Print the vector.
+Calculate and store the average in a variable called:
+average_score
+Print the average.
+Print only Chloe's score.
+Print the highest score (without looking at the numbers yourself—see if you can guess the function).
+Print the lowest score (again, think about what the function might be called).
+```{r}
+
+alice <- 78
+ben <- 65
+chloe <-  91
+david <- 84
+emma <- 73
+
+scores <- c(alice,ben,chloe,david,emma)
+print(scores)
+average_scores <- mean(scores)
+print(average_scores)
+print(scores[3])
+highest_score <- max(scores)
+print(highest_score)
+lowest_score <- min(scores)
+print(lowest_score)
+```
+We're going to start using comparison operators.
+Question 6
+Using the same scores vector:
+Print all the scores that are greater than 80.
+Print all the scores that are less than 75.
+Create a variable called:
+passed
+that stores whether each student scored 70 or above.
+Print passed.
+💡 Don't worry if you don't know how to do it. Think back to when we used indexing:
+scores[3]
+Can you think of a way to put a condition inside the square brackets?
+Have a go without looking anything up. Even if it's wrong, that's how you'll learn.
+
+``` {r}
+print(scores[scores > 80])
+print(scores[scores < 75])
+passed <- scores >= 70
+
+
+```
+Question 7 – Patient Heart Rates
+A hospital records the following heart rates (beats per minute):
+Patient 1 = 62
+Patient 2 = 88
+Patient 3 = 75
+Patient 4 = 102
+Patient 5 = 69
+Patient 6 = 81
+Your tasks:
+Create variables for each patient.
+Create a vector called heart_rates.
+Print the vector.
+Print the average heart rate.
+Print only the heart rates above 80 bpm.
+Create a variable called high_heart_rate that stores whether each patient has a heart rate above 100 bpm.
+Print high_heart_rate.
+Print only the heart rates that are above 100 bpm.
+``` {r}
+patient_1 <- 62
+patient_2 <- 88
+patient_3 <- 75
+patient_4 <- 102
+patient_5 <- 69
+patient_6 <- 81
+
+heart_rates <- c(patient_1, patient_2, patient_3, patient_4, patient_5, patient_6)
+print(heart_rates)
+average_rate <- mean(heart_rates)
+print(average_rate)
+print(heart_rates[heart_rates > 80])
+high_heart_rate <- heart_rates > 100
+print(high_heart_rate)
+print(heart_rates[heart_rates > 100])
+
+
+
+
+```
+Using your heart_rates vector:
+Print the patient(s) whose heart rate is exactly 75.
+Print the patient(s) whose heart rate is not equal to 75.
+Create a variable called:
+normal_rate
+that stores whether each patient has a heart rate between 60 and 100 inclusive.
+⚠️ This last part is the only new challenge. Think about it before you code.
+Hint: You'll need two comparisons joined together.
+Give it your best shot. Don't worry if the last one isn't quite right—we'll work through it together.
+``` {r}
+print(heart_rates[heart_rates = 75])
+print(heart_rates[heart_rates != 75])
+normal_rate <- heart_rates >= 60 & heart_rates <= 100
+print(normal_rate)
+
+```
+A researcher records the ages of six participants:
+ages <- c(18, 22, 17, 25, 19, 16)
+They define an adult as someone aged 18 or older.
+Without creating any new vectors manually, answer the following:
+Print all participants who are adults.
+Print all participants who are minors.
+Create a variable called adult that stores whether each participant is an adult.
+Print adult.
+How many adults are there?
+```{r}
+ages <- c(18, 22, 17, 25, 19, 16)
+print(ages[ages >= 18])
+print(ages[ages <18 ])
+adult <- ages >= 18
+print(adult)
+sum(adult)
+
+
+```
+A researcher records a participant's blood glucose level.
+glucose <- 6.8
+Write an if/else statement that:
+prints "Normal" if the glucose level is less than 7
+otherwise prints "High"
+
+``` {r}
+glucose <-  6.8
+if (glucose < 7 ) {
+  print("Normal")
+} else {
+  print("High")
+}
+
+```
+Question 2 — if / else if / else
+A student receives a mark.
+mark <- 68
+Write an if statement that prints:
+"Distinction" if the mark is 70 or above
+"Pass" if the mark is 50–69
+"Fail" otherwise
+```{r}
+mark <- 68
+if (mark >= 70) {
+  print("Distinction") 
+} else if (mark >= 50) { 
+  print("Pass") 
+} else { 
+  print("Fail")
+}
+ 
+
+
+
+```
+Question
+A hospital records the heart rate of several patients:
+heart_rates <- c(62, 88, 75, 102, 69, 81)
+Using a for loop and an if/else statement, print:
+"Normal" if the heart rate is 100 or below
+"High" if the heart rate is above 100
+The expected output is:
+Normal
+Normal
+Normal
+High
+Normal
+Normal
+One hint
+A for loop has this general structure:
+for (item in vector) {
+
+}
+I want you to have a go at writing it from memory. Don't worry if you get the loop syntax slightly wrong—that's exactly what we're practising.
+``` {r}
+heart_rates <- c(62, 88, 75, 102, 69, 81)
+
+for (heart in heart_rates)
+  if (heart <= 100) {
+    print("Normal")
+  } else if (heart > 100) {
+    print("High")
+    
+  }
+
+```
+Question 1 — Blood Pressure Classification
+A doctor records the systolic blood pressure of six patients.
+blood_pressure <- c(118, 145, 132, 155, 121, 168)
+Using a for loop and an if/else if/else statement, print:
+"Normal" if the blood pressure is less than 120
+"Elevated" if the blood pressure is 120 to 139
+"High" if the blood pressure is 140 or above
+Expected output
+Normal
+High
+Elevated
+High
+Elevated
+High
+``` {r}
+blood_pressure <- c(118, 145, 132, 155, 121, 168)
+for (bp in blood_pressure) {
+  if (bp < 120) {
+    print("Normal")
+    
+  } else if (bp <= 139) {
+    print("Elevated")
+    
+  } else { 
+     print("High") 
+  }
+
+}
+  
+    
+blood_pressure <- c(118, 145, 132, 155, 121, 168)
+
+for (bp in blood_pressure) {
+
+  if (bp < 120) {
+    print("Normal")
+
+  } else if (bp <= 139) {
+    print("Elevated")
+
+  } else {
+    print("High")
+  }
+
+}
+
+```
+You are given the following named vector:
+temperatures <- c(
+  London = 18,
+  Glasgow = 15,
+  Madrid = 31,
+  Paris = 24,
+  Rome = 33
+)
+Your task
+Write a for loop that:
+Loops through the city names.
+Prints:
+"Warm" if the temperature is 25°C or above.
+"Cool" otherwise.
+Prints the city name as well.
+Your output should look like:
+```{r}
+temperatures <- c(London = 18, Glasgow = 15, Madrid = 31, Paris = 24,Rome = 33) 
+  
+for (city in names(temperatures)) { 
+  if (temperatures[city] >= 25) {
+    print(paste0(city , " : Warm" ))
+  } else {
+    print(paste0(city, " : Cool"))
+  } 
+
+}
+
+  
+  
+  
+
+
+```
+
+Practice Question
+heart_rate <- c(
+  Alice = 72,
+  Ben = 95,
+  Chloe = 68,
+  Daniel = 104,
+  Emma = 81
+)
+Your task
+Write a for loop that:
+Loops through the patient names.
+If the heart rate is 90 or above, print:
+Ben : High
+Otherwise print:
+Alice : Normal
+using paste0().
+```{r}
+heart_rate <- c(Alice = 72, Ben = 95, Chloe = 68, Daniel = 104, Emma = 81) 
+                
+for (patient in names(heart_rate)) {
+  if (patient >= 90) {
+    print(paste0(patient, " : High"))
+  } else {
+    print(paste0(patient, " : Normal"))
+  }
+    
+  
+  
+}
+  
+
+
+```
+You are given:
+scores <- c(
+  Alice = 65,
+  Ben = 82,
+  Chloe = 91,
+  Daniel = 74,
+  Emma = 56
+)
+Your task is to write a loop that:
+Loops through each student's name.
+Prints:
+the student's name
+their score
+Keeps a running total of all the scores.
+Stops the loop as soon as the running total is greater than 220.
+```{r}
+scores <- c(Alice = 65,Ben = 82,Chloe = 91,Daniel = 74,
+Emma = 56)
+
+total_score <- 0
+for (student in names(scores)) {
+  print(paste0(student, " : ", scores[student]))
+  total_score <- total_score + scores[student] 
+  if (total_score > 220)
+    break
+  
+  
+}
+
+
+```
+
+
+Your task
+Before the loop, create a variable called:
+total_steps <- 0
+Then write a for loop that:
+Loops through each person's name.
+Prints the person's name and step count, for example:
+Alice : 3500
+Adds each person's steps to total_steps.
+If the running total becomes greater than 15,000, stop the loop using break.
+``` {r}
+steps <- c(
+  Alice = 3500,
+  Ben = 8200,
+  Chloe = 6100,
+  Daniel = 4700,
+  Emma = 9300
+)
+total_steps <- 0
+
+for(person in names(steps)) {
+  print(paste0(person, " : ", steps[person]))
+  total_steps <- total_steps + steps[person]
+  if (total_steps > 15000)
+    break
+}
+
+
+
+```
+A hospital has recorded the oxygen saturation (%) of five patients.
+oxygen <- c(
+  Alice = 98,
+  Ben = 91,
+  Chloe = 96,
+  Daniel = 88,
+  Emma = 94
+)
+Your task
+Before the loop
+Create two variables:
+low_count <- 0
+total_oxygen <- 0
+Then write a for loop that:
+Loops through each patient's name.
+Adds each patient's oxygen level to total_oxygen.
+If the oxygen level is below 92, print:
+Ben : 91 (Low)
+and increase low_count by 1.
+Otherwise print:
+Alice : 98 (Normal)
+If low_count reaches 2, stop the loop immediately using break.
+After the loop
+Print:
+Total oxygen = ...
+using paste0().
+```{r}
+oxygen <- c(
+  Alice = 98,
+  Ben = 91,
+  Chloe = 96,
+  Daniel = 88,
+  Emma = 94
+)
+
+low_count <- 0
+total_oxygen <- 0
+
+for (patient in names(oxygen)) {
+  total_oxygen <- total_oxygen + oxygen[patient]
+  if (oxygen[patient] < 92) {
+    print(paste0(patient, " : " , oxygen[patient], " Low "))
+    low_count <- low_count + 1
+  } else {
+    print(paste0(patient, " : ", oxygen[patient], " Normal ")) } 
+  if (low_count == 2) {
+  break }
+  
+} 
+    
+  
+  
+
+print(paste0("Total Oxygen = ", total_oxygen ))
+
+
+```
+Practice Assignment: 
+You are given the following named vector:
+scores <- c(
+  Alice = 82,
+  Ben = 47,
+  Chloe = 91,
+  Daniel = 65,
+  Emma = 38,
+  Frank = 74
+)
+Question 1 (2 marks)
+Create a variable called average_score that stores the mean score.
+```{r}
+scores <- c(
+  Alice = 82,
+  Ben = 47,
+  Chloe = 91,
+  Daniel = 65,
+  Emma = 38,
+  Frank = 74
+)
+average_scores <- mean(scores)
+print(average_scores)
+
+```
+How many students scored 70 or above?
+Store the answer in a variable called:
+```{r}
+high_scores <- scores >= 70 
+sum(high_scores)
+print(high_scores)
+print(sum(high_scores))
+
+```
+Create a logical vector called
+passed
+where a pass is 50 or above.
+Print the logical vector.
+```{r}
+passed <- scores >= 50
+print(passed)
+
+```
+Question 4 (5 marks)
+Using a for loop, print every student's score like this:
+Alice : 82
+Ben : 47
+```{r}
+for (student in names(scores))
+  print(paste0(student, " : ", scores[student]))
+
+```
+Question 5 (5 marks)
+Modify your loop.
+If a student passed, print:
+Alice : Pass
+Otherwise print:
+Ben : Fail
+```{r}
+for (student in names(scores)) {
+  if (scores[student] >= 50)
+    print(paste0(student, " : Pass " )) 
+ else {
+   print(paste0(student, " : Fail " ))
+ }
+}
+```
+Question 6 (6 marks)
+Before the loop create
+pass_count <- 0
+Every time a student passes:
+increase pass_count by 1.
+After the loop print
+Total passes = 4
+```{r}
+pass_count <- 0
+for (student in names(scores)) {
+  if (scores[student] >= 50) {
+    print(paste0(student, " : Pass " )) 
+  pass_count <- (pass_count + 1) 
+  } else {
+   print(paste0(student, " : Fail " ))
+  }
+  
+}
+
+print(paste0( " Total passes = ", pass_count))
+```
+Question 7 (8 marks)
+Before the loop create
+total_score <- 0
+Inside the loop:
+add each student's score to total_score
+print whether they passed or failed
+stop the loop once total_score becomes greater than 250
+(Hint: you'll need break.)
+After the loop print
+Running total = ...
+```{r}
+total_score <- 0
+for (student in names(scores)) {
+  if (scores[student] >= 50) {
+    print(paste0(student, " : Pass " )) 
+  } else {
+   print(paste0(student, " : Fail " ))
+  }
+  total_score <- total_score + scores[student]
+  if (total_score > 250)
+    break 
+  
+}
+
+
+print(paste0(" Running total = ", total_score))
+
+
+```
+Question 8 (9 marks)
+Create a new named vector:
+heart_rate <- c(
+  Alice = 72,
+  Ben = 115,
+  Chloe = 68,
+  Daniel = 102,
+  Emma = 77
+)
+Write a program that:
+creates
+high_count <- 0
+and
+total_hr <- 0
+Then loops through every patient.
+For each patient:
+add their heart rate to total_hr
+if heart rate is 100 or above
+print
+Ben : High
+increase high_count
+otherwise print
+Alice : Normal
+If high_count reaches 2, stop the loop.
+After the loop print:
+High heart rates = ...
+Total heart rate = ...
+```{r}
+heart_rate <- c(
+  Alice = 72,
+  Ben = 115,
+  Chloe = 68,
+  Daniel = 102,
+  Emma = 77
+)
+high_count <- 0 
+total_hr <- 0
+
+for (patient in names(heart_rate)) {
+  total_hr <- total_hr + heart_rate[patient] 
+  if (heart_rate[patient] >= 100) {
+    print(paste0(patient, ": High"))
+    high_count <- high_count + 1 
+  } else {
+    print(paste0(patient, " : Normal ")) }
+  if (high_count == 2)
+    break
+
+}
+
+print(paste0("High heart rates = ", high_count))
+print(paste0("Total heart rates = ", total_hr))
+
+```
+# Question 9
+
+# You are given the following named vector:
+
+temperature <- c(
+  Alice = 36.8,
+  Ben = 39.2,
+  Chloe = 37.1,
+  Daniel = 38.7,
+  Emma = 36.5,
+  Frank = 39.5
+)
+
+# Write a program that:
+
+# 1. Creates:
+# fever_count <- 0
+# total_temperature <- 0
+
+# 2. Loops through every patient.
+
+# 3. For each patient:
+#    - Add their temperature to total_temperature.
+#    - If temperature >= 38.0:
+#         Print: "Ben : Fever"
+#         Increase fever_count by 1.
+#      Otherwise:
+#         Print: "Alice : Normal"
+
+# 4. Stop the loop when fever_count reaches 2.
+
+# 5. After the loop, print:
+#    Number of fevers = ...
+#    Total temperature = ...
+```{r}
+temperature <- c(
+  Alice = 36.8,
+  Ben = 39.2,
+  Chloe = 37.1,
+  Daniel = 38.7,
+  Emma = 36.5,
+  Frank = 39.5
+)
+
+fever_count <- 0
+total_temperature <- 0
+
+for (patient in names(temperature)) {
+  total_temperature <- total_temperature + temperature[patient] 
+  if (temperature[patient] >= 38.0 ) { 
+    print(paste0(patient, " : Fever "))
+    fever_count <- fever_count + 1
+    } else { 
+      print(paste0(patient, " : Normal ")) }
+    if (fever_count == 2) 
+      break 
+
+  
+  
+} 
+print(paste0(" Number of Fevers = ", fever_count))
+print(paste0(" Total Temperature = ", total_temperature))
+
+sum(fever_count)
+sum(total_temperature)
+
+
+
+
+
+```

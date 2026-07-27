@@ -1,0 +1,155 @@
+---
+title: "Functions"
+output: html_document
+---
+```{r}
+fev1_bcch <- c(
+  Patient_01 = 85,
+  Patient_02 = 62,
+  Patient_03 = 45,
+  Patient_04 = 91,
+  Patient_05 = 38,
+  Patient_06 = 70,
+  Patient_07 = 55,
+  Patient_08 = 76,
+  Patient_09 = 49,
+  Patient_10 = 88
+)
+age_bcch <- c(
+  Patient_01 = 23,
+  Patient_02 = 62,
+  Patient_03 = 45,
+  Patient_04 = 91,
+  Patient_05 = 38,
+  Patient_06 = 70,
+  Patient_07 = 55,
+  Patient_08 = 76,
+  Patient_09 = 49,
+  Patient_10 = 88
+)
+
+fev1_sph <- c( 
+Patient_01 = 31, 
+Patient_02 = 54, 
+Patient_03 = 29, 
+Patient_04 = 78, 
+Patient_05 = 41, 
+Patient_06 = 66,
+Patient_07 = 35, 
+Patient_08 = 82, 
+Patient_09 = 57, 
+Patient_10 = 46
+)
+
+age_sph <- c(
+  Patient_01 = 72,
+  Patient_02 = 58,
+  Patient_03 = 91,
+  Patient_04 = 44,
+  Patient_05 = 67,
+  Patient_06 = 83,
+  Patient_07 = 39,
+  Patient_08 = 76,
+  Patient_09 = 52,
+  Patient_10 = 61
+)
+
+
+
+
+
+```
+
+Using the BCCH data, write a loop that creates a character vector called risk_bcch containing a risk classification for each patient.
+Assign patients as:
+"High risk" if: 
+Age is greater than 50 and 
+FEV1 is less than 70 
+"Moderate risk" if: 
+Age is greater than 30 or 
+FEV1 is less than 70 
+"Low risk" otherwise 
+The final vector should:
+Have the same length as the input data 
+Use patient IDs as names
+
+
+```{r}
+#' Classifying risk for patients based on age and fev1
+#'
+#' @param fev1 fev1 is a numeric vector
+#' @param age age is a numeric vector
+#' 
+#' 
+#' 
+#' @return none 
+#'
+```
+
+
+```{r}
+#'
+
+for (id in names(age_bcch)) {
+  if (age_bcch[id] > 50 & fev1_bcch[id] < 70) { 
+    print(" High Risk")
+} else if (age_bcch[id] > 30 & fev1_bcch[id] < 70) {
+  print("Moderate Risk")
+} else { 
+  print(" Low Risk ")
+  }
+
+}
+
+classify_risk <- function(fev1, age) {
+  for (id in names(age)) {
+  if (age[id] > 50 & fev1[id] < 70) { 
+    print(" High Risk")
+} else if (age[id] > 30 & fev1[id] < 70) {
+  print("Moderate Risk")
+} else { 
+  print(" Low Risk ")
+  }
+  
+  }
+} 
+
+
+classify_risk(fev1_bcch, age_bcch)
+
+print("SPH")
+classify_risk(fev1_sph, age_sph)
+
+
+```
+
+```{r}
+install.packages("palmerpenguins")
+
+```
+
+```{r}
+library(palmerpenguins) 
+
+```
+
+
+```{r}
+data("penguins")
+
+```
+
+```{r}
+
+write.csv( 
+penguins, 
+"penguins.csv", 
+row.names = FALSE 
+)
+
+```
+
+```{r}
+penguins <- read.csv("penguins.csv")
+
+```
